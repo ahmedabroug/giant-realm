@@ -1,0 +1,11 @@
+<p>hello</p>
+
+<ul>
+  <li *ngFor="let item of books | async">
+    <pre>{{ item.name }}</pre>
+    <button class="btn btn-warning" (click)="deletBook(item.id)">Delete a book!</button>
+  </li>
+</ul>
+
+<button class="btn btn-info" (click)="AddBook()">Add a book!</button>
+
