@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Book } from './models/book';
+import { Book } from '@store/models/book';
 
 
 @Component({
