@@ -1,0 +1,33 @@
+<div class="p-5">
+<div class="row">
+  <div class="col-9">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="col-2">
+    <i class="fa fa-dashboard fa-3x float-right hi-icon"></i>
+  </div>
+  <div class="col-1">
+    <div ngbDropdown class="d-inline-block float-right">
+      <i class="fa fa-user fa-3x dropdown-toggle hi-icon" id="dropdownMenuButton" ngbDropdownToggle></i>
+      <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+        <a class="pointer" ngbDropdownItem >Profile</a>
+        <a class="pointer" ngbDropdownItem >Orders</a>
+        <a class="pointer" ngbDropdownItem (click)="logout()">Logout</a>
+      </div>
+    </div>
+
+    <!-- <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Action - 1</button>
+        <button ngbDropdownItem>Another Action</button>
+        <button ngbDropdownItem>Something else is here</button>
+      </div> -->
+
+  </div>
+
+</div>
+</div>

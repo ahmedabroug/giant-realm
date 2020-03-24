@@ -1,1 +1,203 @@
-<p>side-bar works!</p>
+<div class="sidebar ng-star-inserted" id="left-sidebar" style="overflow-y:scroll;">
+  <div class="sidebar-scroll">
+    <div class="user-account"><img alt="User Profile Picture" class="rounded-circle user-photo"
+        src="assets/images/user.png">
+      <div class="dropdown" ngbdropdown=""><span>Welcome,</span><a aria-haspopup="true"
+          class="dropdown-toggle user-name dropdown-toggle" href="javascript:void(0);" ngbdropdowntoggle=""
+          aria-expanded="false"><strong>Alizee
+            Thomas</strong></a>
+        <ul class="dropdown-menu dropdown-menu-right account" ngbdropdownmenu="" x-placement="bottom-left"
+          style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 42px);">
+          <li><a href="/templates/lucid/angular/admin/pages/page-profile2"><i class="icon-user"></i>My Profile</a></li>
+          <li><a href="/templates/lucid/angular/admin/app/app-inbox"><i class="icon-envelope-open"></i>Messages</a></li>
+          <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="/templates/lucid/angular/authentication/page-login"><i class="icon-power"></i>Logout</a></li>
+        </ul>
+      </div>
+      <hr>
+      <ul class="row list-unstyled">
+        <li class="col-4"><small>Sales</small>
+          <h6>456</h6>
+        </li>
+        <li class="col-4"><small>Order</small>
+          <h6>1350</h6>
+        </li>
+        <li class="col-4"><small>Revenue</small>
+          <h6>$2.13B</h6>
+        </li>
+      </ul>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link active">Menu</a></li>
+      <li class="nav-item"><a class="nav-link"><i class="icon-book-open"></i></a></li>
+      <li class="nav-item"><a class="nav-link"><i class="icon-settings"></i></a></li>
+      <li class="nav-item"><a class="nav-link"><i class="icon-question"></i></a></li>
+    </ul>
+    <div class="tab-content p-l-0 p-r-0">
+      <div class="tab-pane active" id="menu">
+        <nav class="sidebar-nav" id="left-sidebar-nav">
+          <ul class="metismenu" id="main-menu">
+            <li routerlinkactive="active" class=""><a class="has-arrow"><i
+                  class="icon-home"></i><span>Dashboard</span></a>
+              <!---->
+            </li>
+            <li routerlinkactive="active"><a class="has-arrow"><i class="icon-grid"></i><span>App</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-folder"></i><span>File Manager</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-globe"></i><span>Blog</span></a>
+              <!---->
+            </li>
+            <li routerlinkactive="active"><a class="has-arrow"><i class="icon-diamond"></i><span>UI Elements</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-puzzle"></i><span>Widgets</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-lock"></i><span>Authentication</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-docs"></i><span>Pages</span></a>
+              <!---->
+            </li>
+            <li class="active"><a class="has-arrow"><i class="icon-pencil"></i><span>Forms</span></a>
+              <!---->
+              <ul class="ng-star-inserted">
+                <li routerlinkactive="active" class="active"><a
+                    href="/templates/lucid/angular/admin/forms/forms-validation">Form Validation</a></li>
+                <li routerlinkactive="active"><a href="/templates/lucid/angular/admin/forms/forms-basic">Basic
+                    Elements</a></li>
+              </ul>
+            </li>
+            <li><a class="has-arrow"><i class="icon-tag"></i><span>Tables</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-bar-chart"></i><span>Charts</span></a>
+              <!---->
+            </li>
+            <li><a class="has-arrow"><i class="icon-bar-chart"></i><span>Maps</span></a>
+              <!---->
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="tab-pane p-l-15 p-r-15" id="Chat">
+        <form>
+          <div class="input-group m-b-20">
+            <div class="input-group-prepend"><span class="input-group-text"><i class="icon-magnifier"></i></span></div>
+            <input class="form-control" placeholder="Search..." type="text">
+          </div>
+        </form>
+        <ul class="right_chat list-unstyled">
+          <li class="online"><a href="javascript:void(0);">
+              <div class="media"><img alt="" class="media-object " src="assets/images/xs/avatar4.jpg">
+                <div class="media-body"><span class="name">Chris
+                    Fox</span><span class="message">Designer, Blogger</span><span
+                    class="badge badge-outline status"></span></div>
+              </div>
+            </a></li>
+          <li class="online"><a href="javascript:void(0);">
+              <div class="media"><img alt="" class="media-object " src="assets/images/xs/avatar5.jpg">
+                <div class="media-body"><span class="name">Joge
+                    Lucky</span><span class="message">Java Developer</span><span
+                    class="badge badge-outline status"></span></div>
+              </div>
+            </a></li>
+          <li class="offline"><a href="javascript:void(0);">
+              <div class="media"><img alt="" class="media-object " src="assets/images/xs/avatar2.jpg">
+                <div class="media-body"><span class="name">Isabella</span><span class="message">CEO,
+                    Thememakker</span><span class="badge badge-outline status"></span></div>
+              </div>
+            </a></li>
+          <li class="offline"><a href="javascript:void(0);">
+              <div class="media"><img alt="" class="media-object " src="assets/images/xs/avatar1.jpg">
+                <div class="media-body"><span class="name">Folisise
+                    Chosielie</span><span class="message">Art director, Movie Cut</span><span
+                    class="badge badge-outline status"></span></div>
+              </div>
+            </a></li>
+          <li class="online"><a href="javascript:void(0);">
+              <div class="media"><img alt="" class="media-object " src="assets/images/xs/avatar3.jpg">
+                <div class="media-body"><span class="name">Alexander</span><span class="message">Writter, Mag
+                    Editor</span><span class="badge badge-outline status"></span></div>
+              </div>
+            </a></li>
+        </ul>
+      </div>
+      <div class="tab-pane p-l-15 p-r-15" id="setting">
+        <h6>Choose Mode</h6>
+        <ul class="choose-skin list-unstyled">
+          <li data-theme="white" class="active">
+            <div class="white"></div><span>Light</span>
+          </li>
+          <li data-theme="black" class="">
+            <div class="black"></div><span>Dark</span>
+          </li>
+        </ul>
+        <hr>
+        <h6>Choose Skin</h6>
+        <ul class="choose-skin list-unstyled">
+          <li data-theme="purple">
+            <div class="purple"></div><span>Purple</span>
+          </li>
+          <li data-theme="blue" class="">
+            <div class="blue"></div><span>Blue</span>
+          </li>
+          <li data-theme="cyan" class="active">
+            <div class="cyan"></div><span>Cyan</span>
+          </li>
+          <li data-theme="green" class="">
+            <div class="green"></div><span>Green</span>
+          </li>
+          <li data-theme="orange" class="">
+            <div class="orange"></div><span>Orange</span>
+          </li>
+          <li data-theme="blush" class="">
+            <div class="blush"></div><span>Blush</span>
+          </li>
+        </ul>
+        <hr>
+        <h6>General Settings</h6>
+        <ul class="setting-list list-unstyled">
+          <li><label class="fancy-checkbox"><input name="checkbox" type="checkbox"><span>Report Panel
+                Usag</span></label></li>
+          <li><label class="fancy-checkbox"><input checked="" name="checkbox" type="checkbox"><span>Email
+                Redirect</span></label></li>
+          <li><label class="fancy-checkbox"><input checked="" name="checkbox"
+                type="checkbox"><span>Notifications</span></label></li>
+          <li><label class="fancy-checkbox"><input name="checkbox" type="checkbox"><span>Auto Updates</span></label>
+          </li>
+          <li><label class="fancy-checkbox"><input name="checkbox" type="checkbox"><span>Offline</span></label></li>
+          <li><label class="fancy-checkbox"><input name="checkbox" type="checkbox"><span>Location
+                Permission</span></label></li>
+        </ul>
+      </div>
+      <div class="tab-pane p-l-15 p-r-15" id="question">
+        <form>
+          <div class="input-group">
+            <div class="input-group-prepend"><span class="input-group-text"><i class="icon-magnifier"></i></span></div>
+            <input class="form-control" placeholder="Search..." type="text">
+          </div>
+        </form>
+        <ul class="list-unstyled question">
+          <li class="menu-heading">HOW-TO</li>
+          <li><a href="javascript:void(0);">How to Create Campaign</a></li>
+          <li><a href="javascript:void(0);">Boost Your Sales</a></li>
+          <li><a href="javascript:void(0);">Website Analytics</a></li>
+          <li class="menu-heading">ACCOUNT</li>
+          <li><a href="javascript:void(0);">Cearet New Account</a></li>
+          <li><a href="javascript:void(0);">Change Password?</a></li>
+          <li><a href="javascript:void(0);">Privacy &amp; Policy</a></li>
+          <li class="menu-heading">BILLING</li>
+          <li><a href="javascript:void(0);">Payment info</a></li>
+          <li><a href="javascript:void(0);">Auto-Renewal</a></li>
+          <li class="menu-button m-t-30"><a class="btn btn-primary" href="javascript:void(0);"><i
+                class="icon-question"></i> Need Help?</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

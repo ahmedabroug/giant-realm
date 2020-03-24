@@ -1,0 +1,69 @@
+<table class="table table-hover" *ngIf="table" [mfData]="table.data" #mf="mfDataTable" [mfRowsOnPage]="10">
+  <thead *ngIf="table.header && table.header.length > 0">
+    <tr>
+      <ng-container *ngFor="let head of table.header">
+        <th [ngStyle]="{'width': table.header.length === 1 ? '80%': '20%'}">
+          <mfDefaultSorter [by]="head.index">{{ head.title }}</mfDefaultSorter>
+        </th>
+      </ng-container>
+      <ng-container *ngIf="table.actions && table.actions.length > 0">
+        <th class="text-right">
+          <mfDefaultSorter>Actions</mfDefaultSorter>
+        </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="table.data && table.data.length > 0 ;else empty">
+      <tr *ngFor="let row of table.data">
+        <ng-container *ngFor="let head of table.header; let i = index">
+          <td [ngSwitch]="head.type">
+            <ng-container *ngSwitchCase="'TEXT'">
+              {{ row[head.index] }}
+            </ng-container>
+            <ng-container *ngSwitchCase="'MONTH_YEAR'">
+              {{ row[head.index] }}{{ head.options.indexSeparator }}{{ row[head.options.secondIndex] }}
+            </ng-container>
+            <ng-container *ngSwitchCase="'SPAN'">
+              <span
+                [ngClass]="getCSSClasses(row[head.index])">{{ row[head.index] != '' ? row[head.index] : "head.options.emptyStatus"}}</span>
+            </ng-container>
+          </td>
+        </ng-container>
+        <ng-container *ngIf="table.actions && table.actions.length > 0">
+          <td class="text-right" style="min-width:15rem">
+            <ng-container *ngFor="let action of table.actions">
+              <ng-container *appHasAnyCondition="action.conditions;status:row.worksheetStatus" >
+                  <button [class]="getButtonClassByStatusAndCondition(row.worksheetStatus, action.type)"
+                  *appHasAnyPermission="action.permissions" (click)="onActionClick(row, action.type)"
+                          ngbPopover="{{action.helpMessage}}" triggers="mouseenter:mouseleave"
+                  >
+                    <i [class]="action.icon"></i>
+                  </button>
+
+              </ng-container>
+            </ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </ng-container>
+    <ng-template #empty>
+      <tr>
+        <td [attr.colspan]="getColspan(table.header?.length, table.actions)">
+          The list is empty.
+        </td>
+      </tr>
+    </ng-template>
+  </tbody>
+  <ng-container *ngIf="table.page">
+    <tfoot>
+      <tr>
+        <td [attr.colspan]="getColspan(table.header?.length, table.actions)">
+          <app-pagination-component [total]="table.page.totalElements" [limit]="table.page.limit"
+            [(page)]="table.page.number" (pageChange)="onPageChange($event)" (limitChange)="onLimitChange($event)">
+          </app-pagination-component>
+        </td>
+      </tr>
+    </tfoot>
+  </ng-container>
+</table>

@@ -8,14 +8,26 @@ import { ShowcaseComponent } from './showcase/showcase.component';
 import { ListComponent } from './stock/list/list.component';
 import { StatComponent } from './stock/stat/stat.component';
 import { DetailComponent } from './order/detail/detail.component';
+import { RouterModule } from '@angular/router';
+import { STOREROUTES } from './store.routing';
 
 
 
 
 @NgModule({
-  declarations: [ProductShowcaseComponent, ProductListComponent, ProductDetailComponent, BasketComponent, ShowcaseComponent, ListComponent, StatComponent, DetailComponent],
+  declarations: [
+    ProductShowcaseComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    BasketComponent,
+    ShowcaseComponent,
+    ListComponent,
+    StatComponent,
+    DetailComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(STOREROUTES),
   ]
 })
 export class StoreModule { }

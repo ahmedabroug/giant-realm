@@ -1,0 +1,91 @@
+.label-margin{
+  margin: 0.5rem;
+}
+.holiday-class{
+  background-color: dimgray !important;
+  color: white;
+}
+.day-class{
+  background-color: white !important;
+}
+.weekend-class{
+  background-color: lightgray !important;
+}
+.headerColor{
+  background-color: #2B4162 !important;
+  color: white;
+}
+.dayFontSize{
+  font-size: small;
+}
+.column-size{
+  width: 5rem !important;
+}
+
+::ng-deep .modal-xl .modal-dialog {
+  max-width: 70%;
+  width: 70%;
+}
+
+.myinput{
+  width: 48px;
+}
+.theader_cra{
+  color: #b5b5b5;
+  text-align: center
+}
+.hrborder{
+  border-right: hidden;
+}
+.header_modal{
+  color: #f96e5b;
+}
+@media only screen and (max-width: 600px) {
+  .tolal-style{
+    text-align: center;
+    padding-left: 1.5em !important;
+  }
+}
+.tolal-style{
+  text-align: -webkit-center;
+  text-align: center;
+  padding-left: 3em;
+}
+.total-header{
+  vertical-align: middle;
+  text-align: -webkit-center;
+  color: white;
+  background-color: #696969c7;
+}
+.custom-wizard aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li:after {
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  content: '';
+  text-align: center;
+  vertical-align: middle;
+  line-height: 46px;
+  -webkit-transition: .25s;
+  transition: .25s;
+  border-radius: 15%;
+  color: #e6e6e6;
+  content: attr(step-symbol);
+  border: 2px solid #e6e6e6
+}
+
+.custom-wizard aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li.done:after {
+  background-color: grey;
+  color: #FFF;
+  border: 3px solid grey;
+}
+
+.custom-wizard aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li.editing:after {
+  color: grey;
+  border: 2px solid grey;
+}
+
+.custom-wizard .dropdown.dropdown-inline {
+  width: 270px;
+}

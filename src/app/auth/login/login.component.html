@@ -1,0 +1,46 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
+<div id="wrapper">
+  <div class="vertical-align-wrap">
+    <div class="vertical-align-middle auth-main">
+      <div class="auth-box">
+        <div class="top">
+          <img alt="Lucid" src="assets/images/logo-white.svg">
+        </div>
+        <div class="card">
+          <div class="header">
+            <p class="lead">Login to your account</p>
+          </div>
+          <div class="body">
+            <form class="form-auth-small ng-untouched ng-pristine ng-valid" novalidate="">
+              <div class="form-group">
+                <label class="control-label sr-only" for="signin-email">Email</label>
+                <input class="form-control mb-2" id="email" name="email" type="text" placeholder="Email" required autofocus [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label class="control-label sr-only" for="signin-password">Password</label>
+                <input class="form-control" id="password" name="password" type="password" placeholder="Password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group clearfix">
+                <label class="fancy-checkbox element-left">
+                  <input type="checkbox" id="rememberMe" name="rememberMe" [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}">
+                  <span>Remember me</span>
+                </label>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="button" (click)="login(email, password)">LOGIN</button>
+              <div class="bottom">
+                <span class="helper-text m-b-10">
+                  <i class="fa fa-lock"></i>&nbsp;
+                  <a [routerLink]="['/authentication/forgot-password']" routerLinkActive="active">Forgot password?</a>
+                </span>
+                <span>Don't have an account?
+                  <a [routerLink]="['/authentication/register']" routerLinkActive="active">Register</a>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
