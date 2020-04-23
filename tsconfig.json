@@ -27,7 +27,8 @@
       "@core/*": ["app/core/*"],
       "@store/*": ["app/store/*"],
       "@stock/*": ["app/stock/*"],
-      "@auth/*": ["app/auth/*"]
+      "@auth/*": ["app/auth/*"],
+      "@config/*": ["app/config/*"]
     }
   },
   "angularCompilerOptions": {

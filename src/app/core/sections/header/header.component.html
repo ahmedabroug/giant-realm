@@ -1,10 +1,13 @@
 <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
+
+    <!-- MENU -->
     <div class="navbar-btn">
-      <button class="btn-toggle-offcanvas" type="button">
+      <button class="btn-toggle-offcanvas" type="button" (click)="onToggelCanvas(canvas)">
         <i class="lnr lnr-menu fa fa-bars"></i>
       </button>
     </div>
+
     <div class="navbar-brand">
       <!-- BRAND -->
       <a href="/templates/lucid/angular/admin" class="ng-star-inserted">
@@ -16,56 +19,59 @@
       <form class="navbar-form search-form" id="navbar-search">
         <input class="form-control" placeholder="Search here..." type="text" value="">
         <button class="btn btn-default" type="button"><i class="icon-magnifier">
-        </i>
-      </button>
-    </form>
+          </i>
+        </button>
+      </form>
       <div id="navbar-menu">
         <ul class="nav navbar-nav">
-          <li >
-            <a class="icon-menu d-none d-sm-block d-md-none d-lg-block" href="/templates/lucid/angular/admin/file-manager/file-documents">
+          <li>
+            <a class="menu-icon-nav d-none d-sm-block d-md-none d-lg-block"
+              href="/templates/lucid/angular/admin/file-manager/file-documents">
               <i class="fa fa-folder-open-o"></i>
             </a>
           </li>
-          <li >
-            <a class="icon-menu d-none d-sm-block d-md-none d-lg-block" href="/templates/lucid/angular/admin/app/app-calendar">
+          <li>
+            <a class="menu-icon-nav d-none d-sm-block d-md-none d-lg-block"
+              href="/templates/lucid/angular/admin/app/app-calendar">
               <i class="icon-calendar"></i>
             </a>
           </li>
-          <li >
-            <a class="icon-menu d-none d-sm-block" href="/templates/lucid/angular/admin/app/app-chat">
+          <li>
+            <a class="menu-icon-nav d-none d-sm-block" href="/templates/lucid/angular/admin/app/app-chat">
               <i class="icon-bubbles"></i>
             </a>
           </li>
-          <li >
-            <a class="icon-menu d-none d-sm-block" href="/templates/lucid/angular/admin/app/app-inbox">
+          <li>
+            <a class="menu-icon-nav d-none d-sm-block" href="/templates/lucid/angular/admin/app/app-inbox">
               <i class="icon-envelope"></i>
               <span class="notification-dot"></span>
             </a>
-        </li>
-          <li class="dropdown" ngbdropdown="">
-            <a aria-haspopup="true" class="dropdown-toggle icon-menu dropdown-toggle" ngbdropdowntoggle="" aria-expanded="false">
+          </li>
+          <li class="show dropdown" ngbDropdown display="dynamic" placement="bottom-right">
+            <a aria-haspopup="true" class="dropdown-toggle menu-icon-nav dropdown-toggle" ngbDropdownToggle
+              aria-expanded="false">
               <i class="icon-bell"></i>
               <span class="notification-dot"></span>
             </a>
-            <ul class="dropdown-menu notifications" ngbdropdownmenu="" x-placement="bottom-right">
+            <ul class="dropdown-menu notifications" ngbDropdownMenu>
               <li class="header">
-                <strong >You have 4 new Notifications</strong>
+                <strong>You have 4 new Notifications</strong>
               </li>
-              <li >
+              <li>
                 <a href="javascript:void(0);">
                   <div class="media">
                     <div class="media-left">
                       <i class="icon-info text-warning"></i>
                     </div>
                     <div class="media-body">
-                      <p class="text">Campaign <strong >Holiday Sale</strong>
+                      <p class="text">Campaign <strong>Holiday Sale</strong>
                         is nearly reach budget limit.</p>
-                        <span class="timestamp">10:00 AM Today</span>
+                      <span class="timestamp">10:00 AM Today</span>
                     </div>
                   </div>
                 </a>
               </li>
-              <li >
+              <li>
                 <a href="javascript:void(0);">
                   <div class="media">
                     <div class="media-left">
@@ -73,13 +79,13 @@
                     </div>
                     <div class="media-body">
                       <p class="text">Your New Campaign
-                        <strong >Holiday Sale</strong> is approved. </p>
-                        <span class="timestamp">11:30 AM Today</span>
+                        <strong>Holiday Sale</strong> is approved. </p>
+                      <span class="timestamp">11:30 AM Today</span>
                     </div>
                   </div>
                 </a>
               </li>
-              <li >
+              <li>
                 <a href="javascript:void(0);">
                   <div class="media">
                     <div class="media-left">
@@ -92,7 +98,7 @@
                   </div>
                 </a>
               </li>
-              <li >
+              <li>
                 <a href="javascript:void(0);">
                   <div class="media">
                     <div class="media-left">
@@ -110,30 +116,28 @@
               </li>
             </ul>
           </li>
-          <li class="dropdown" ngbdropdown=""><a aria-haspopup="true" class="dropdown-toggle icon-menu dropdown-toggle"
-              ngbdropdowntoggle="" aria-expanded="false"><i class="icon-equalizer"></i></a>
-            <ul class="dropdown-menu user-menu menu-icon" ngbdropdownmenu="" x-placement="bottom-right">
+          <li class="show dropdown" ngbDropdown display="dynamic" placement="bottom-right">
+            <a aria-haspopup="true"
+              class="dropdown-toggle menu-icon-nav dropdown-toggle" ngbDropdownToggle aria-expanded="false">
+              <i class="icon-equalizer"></i>
+            </a>
+            <ul class="dropdown-menu user-menu menu-icon" ngbDropdownMenu>
               <li class="menu-heading">ACCOUNT SETTINGS</li>
-              <li ><a href="javascript:void(0);"><i class="icon-note"></i><span
-                    >Basic</span></a></li>
-              <li ><a href="javascript:void(0);"><i
-                    class="icon-equalizer"></i><span >Preferences</span></a></li>
-              <li ><a href="javascript:void(0);"><i class="icon-lock"></i><span
-                    >Privacy</span></a></li>
-              <li ><a href="javascript:void(0);"><i class="icon-bell"></i><span
-                    >Notifications</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-note"></i><span>Basic</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-equalizer"></i><span>Preferences</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-lock"></i><span>Privacy</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-bell"></i><span>Notifications</span></a></li>
               <li class="menu-heading">BILLING</li>
-              <li ><a href="javascript:void(0);"><i
-                    class="icon-credit-card"></i><span >Payments</span></a></li>
-              <li ><a href="javascript:void(0);"><i
-                    class="icon-printer"></i><span >Invoices</span></a></li>
-              <li ><a href="javascript:void(0);"><i
-                    class="icon-refresh"></i><span >Renewals</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-credit-card"></i><span>Payments</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-printer"></i><span>Invoices</span></a></li>
+              <li><a href="javascript:void(0);"><i class="icon-refresh"></i><span>Renewals</span></a></li>
             </ul>
           </li>
-          <li ><a class="icon-menu d-none d-sm-block"
-              href="/templates/lucid/angular/authentication/page-login"><i
-                class="icon-login"></i></a></li>
+          <li>
+            <a class="menu-icon-nav d-none d-sm-block" href="/templates/lucid/angular/authentication/page-login">
+              <i class="icon-login"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

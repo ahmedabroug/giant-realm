@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from 'app/auth/services/auth.service';
 
 @Component({
@@ -8,10 +8,20 @@ import { AuthService } from 'app/auth/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() toggelCanvas: EventEmitter<boolean> = new EventEmitter<boolean>();
+  canvas = false;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
-    console.log('user', this.auth.currentUser);
+
+  }
+
+  onToggelCanvas(canvas: boolean): void {
+    this.canvas = !canvas;
+    this.toggelCanvas.emit(this.canvas);
+    console.log('canvas:', this.canvas);
+
   }
 
 }

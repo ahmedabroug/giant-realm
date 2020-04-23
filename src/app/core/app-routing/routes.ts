@@ -15,7 +15,7 @@ export const ROUTES: Routes = [
       { path: 'shop', loadChildren: () => import('@store/store.module').then(m => m.StoreModule) },
     ]
   },
-  // administration layout
+  // management layout
   {
     path: '',
     component: MainComponent,
@@ -24,6 +24,15 @@ export const ROUTES: Routes = [
       { path: 'stock', loadChildren: () => import('@stock/stock.module').then(m => m.StockModule) },
     ]
   },
+    // administration layout
+    {
+      path: '',
+      component: MainComponent,
+      canActivate: [LoggedInGuard],
+      children: [
+        { path: 'config', loadChildren: () => import('@config/config.module').then(m => m.ConfigModule) },
+      ]
+    },
   // security layout
   {
     path: '',

@@ -30,6 +30,10 @@ export class AuthService {
     this.sendEmailVerification();
   }
 
+  async updateUser(user: User) {
+    const result = await this.afAuth.auth.updateCurrentUser(user);
+  }
+
   async sendEmailVerification() {
     await this.afAuth.auth.currentUser.sendEmailVerification();
     this.router.navigate(['admin/verify-email']);

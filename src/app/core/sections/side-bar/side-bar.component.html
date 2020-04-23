@@ -1,90 +1,93 @@
-<div class="sidebar ng-star-inserted" id="left-sidebar" style="overflow-y:scroll;">
+<ng-container *ngIf="show">
+<div class="sidebar " id="left-sidebar" style="overflow-y:scroll;">
   <div class="sidebar-scroll">
-    <div class="user-account"><img alt="User Profile Picture" class="rounded-circle user-photo"
-        src="assets/images/user.png">
-      <div class="dropdown" ngbdropdown=""><span>Welcome,</span><a aria-haspopup="true"
-          class="dropdown-toggle user-name dropdown-toggle" href="javascript:void(0);" ngbdropdowntoggle=""
-          aria-expanded="false"><strong>Alizee
-            Thomas</strong></a>
-        <ul class="dropdown-menu dropdown-menu-right account" ngbdropdownmenu="" x-placement="bottom-left"
-          style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 42px);">
-          <li><a href="/templates/lucid/angular/admin/pages/page-profile2"><i class="icon-user"></i>My Profile</a></li>
-          <li><a href="/templates/lucid/angular/admin/app/app-inbox"><i class="icon-envelope-open"></i>Messages</a></li>
-          <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
+    <!-- USER SECTION -->
+    <div class="user-account">
+      <img alt="User Profile Picture" class="rounded-circle user-photo" [src]="currentUser.photoURL ? currentUser.photoURL : 'assets/images/user.png'">
+      <div class="dropdown" ngbDropdown display="dynamic" placement="bottom-left">
+        <span>Welcome,</span>
+        <a aria-haspopup="true"  class="dropdown-toggle user-name dropdown-toggle" href="javascript:void(0);"
+        ngbDropdownToggle aria-expanded="false">
+        <strong>{{currentUser.displayName ? currentUser.displayName : 'Alizee Thomas'}}</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu >
+          <li>
+            <a [routerLink]="['/config/profile']">
+              <i class="icon-user"></i>My Profile
+            </a>
+          </li>
+          <li>
+            <a href="/templates/lucid/angular/admin/app/app-inbox">
+              <i class="icon-envelope-open"></i>Messages
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">
+              <i class="icon-settings"></i>Settings
+            </a>
+          </li>
           <li class="divider"></li>
-          <li><a href="/templates/lucid/angular/authentication/page-login"><i class="icon-power"></i>Logout</a></li>
+          <li>
+            <a href="/templates/lucid/angular/authentication/page-login">
+              <i class="icon-power"></i>Logout
+            </a>
+          </li>
         </ul>
       </div>
       <hr>
       <ul class="row list-unstyled">
-        <li class="col-4"><small>Sales</small>
+        <li class="col-4">
+          <small>Sales</small>
           <h6>456</h6>
         </li>
-        <li class="col-4"><small>Order</small>
+        <li class="col-4">
+          <small>Order</small>
           <h6>1350</h6>
         </li>
-        <li class="col-4"><small>Revenue</small>
+        <li class="col-4">
+          <small>Revenue</small>
           <h6>$2.13B</h6>
         </li>
       </ul>
     </div>
-    <ul class="nav nav-tabs">
+    <!-- USER SECTION -->
+
+    <!-- <ul class="nav nav-tabs">
       <li class="nav-item"><a class="nav-link active">Menu</a></li>
       <li class="nav-item"><a class="nav-link"><i class="icon-book-open"></i></a></li>
       <li class="nav-item"><a class="nav-link"><i class="icon-settings"></i></a></li>
       <li class="nav-item"><a class="nav-link"><i class="icon-question"></i></a></li>
     </ul>
-    <div class="tab-content p-l-0 p-r-0">
-      <div class="tab-pane active" id="menu">
-        <nav class="sidebar-nav" id="left-sidebar-nav">
-          <ul class="metismenu" id="main-menu">
-            <li routerlinkactive="active" class=""><a class="has-arrow"><i
-                  class="icon-home"></i><span>Dashboard</span></a>
-              <!---->
-            </li>
-            <li routerlinkactive="active"><a class="has-arrow"><i class="icon-grid"></i><span>App</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-folder"></i><span>File Manager</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-globe"></i><span>Blog</span></a>
-              <!---->
-            </li>
-            <li routerlinkactive="active"><a class="has-arrow"><i class="icon-diamond"></i><span>UI Elements</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-puzzle"></i><span>Widgets</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-lock"></i><span>Authentication</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-docs"></i><span>Pages</span></a>
-              <!---->
-            </li>
-            <li class="active"><a class="has-arrow"><i class="icon-pencil"></i><span>Forms</span></a>
-              <!---->
-              <ul class="ng-star-inserted">
-                <li routerlinkactive="active" class="active"><a
-                    href="/templates/lucid/angular/admin/forms/forms-validation">Form Validation</a></li>
-                <li routerlinkactive="active"><a href="/templates/lucid/angular/admin/forms/forms-basic">Basic
-                    Elements</a></li>
-              </ul>
-            </li>
-            <li><a class="has-arrow"><i class="icon-tag"></i><span>Tables</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-bar-chart"></i><span>Charts</span></a>
-              <!---->
-            </li>
-            <li><a class="has-arrow"><i class="icon-bar-chart"></i><span>Maps</span></a>
-              <!---->
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="tab-pane p-l-15 p-r-15" id="Chat">
+    <div class="tab-content p-l-0 p-r-0"> -->
+
+    <!-- SIDE BAR NAV -->
+    <div class="tab-pane active" id="menu">
+      <nav class="sidebar-nav" id="left-sidebar-nav">
+        <ul class="metismenu" id="main-menu">
+
+          <li [class.active]="showMenu === sidebarnavItem.title" *ngFor="let sidebarnavItem of sidebarnavItems">
+            <a [routerLink]="sidebarnavItem.path === '' ?  null : [sidebarnavItem.path]" [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;" (click)="addExpandClass(sidebarnavItem.title)">
+              <i [ngClass]="[sidebarnavItem.icon]"></i>
+              <span>{{sidebarnavItem.title}}</span>
+            </a>
+
+            <!-- Second Level Menu -->
+            <ul class="collapse" *ngIf="sidebarnavItem.submenu.length > 0" [ngClass]="{'in' : showMenu === sidebarnavItem.title }">
+              <li *ngFor="let sidebarnavSubItem of sidebarnavItem.submenu" [class.active]="showSubMenu === sidebarnavSubItem.title" [routerLinkActive]="sidebarnavSubItem.submenu.length > 0 ? '' : 'active'">
+                <a [routerLink]="sidebarnavSubItem.path ===  '' ? null : [sidebarnavSubItem.path]" [routerLinkActive]="sidebarnavSubItem.submenu.length > 0 ? '' : 'router-link-active'" (click)="addActiveClass(sidebarnavSubItem.title)">{{sidebarnavSubItem.title}}
+                  <span *ngIf="sidebarnavSubItem.label !== '' " [ngClass]="[sidebarnavSubItem.labelClass]">{{sidebarnavSubItem.label}}</span>
+                </a>
+              </li>
+            </ul>
+            <!-- Second Level Menu -->
+
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <!-- <div class="tab-pane p-l-15 p-r-15" id="Chat">
         <form>
           <div class="input-group m-b-20">
             <div class="input-group-prepend"><span class="input-group-text"><i class="icon-magnifier"></i></span></div>
@@ -197,7 +200,8 @@
           <li class="menu-button m-t-30"><a class="btn btn-primary" href="javascript:void(0);"><i
                 class="icon-question"></i> Need Help?</a></li>
         </ul>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </div>
 </div>
+</ng-container>

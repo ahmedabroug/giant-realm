@@ -1,13 +1,18 @@
 <!-- <p>main works!</p> -->
-<div class="body theme-cyan">
+<div class="body theme-cyan" [ngClass]="{'offcanvas-active': canvas}">
   <div id="wrapper">
-    <gr-header></gr-header>
-    <gr-side-bar></gr-side-bar>
-    <div id="main-content">
-      <gr-breadcrumb></gr-breadcrumb>
-      <router-outlet></router-outlet>
+    <gr-header (toggelCanvas)="onToggelCanvas($event)"></gr-header>
+    <gr-side-bar [show]="show"></gr-side-bar>
+    <div id="main-content" [ngClass]="{'layout-fullwidth': !show}">
+      <div class="container-fluid">
+        <gr-breadcrumb (toggelSideBar)="onToggelSideBar($event)"></gr-breadcrumb>
+        <div class="row clearfix">
+          <div class="col-md-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
     </div>
     <gr-footer></gr-footer>
   </div>
 </div>
-

@@ -4,7 +4,7 @@
       <h2>
         <a class="btn btn-xs btn-link btn-toggle-fullwidth" href="javascript:void(0);">
           <!-- BACK ARROW -->
-          <i class="fa fa-arrow-left ng-star-inserted"></i>
+          <i class="fa" [ngClass]="getArrow(show)" (click)="onToggelSideBar(show)"></i>
           <!-- BACK ARROW -->
         </a> Validation
       </h2>
@@ -20,5 +20,6 @@
     </div>
   </div>
 </div>
+
 
 

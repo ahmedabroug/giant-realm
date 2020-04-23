@@ -1808,7 +1808,7 @@ body {
   border-color: #3b3b46 !important
 }
 
-.body.full-dark .navbar-nav .icon-menu i,
+.body.full-dark .navbar-nav .menu-icon-nav i,
 .body.full-dark .media .media-body .media-heading,
 .body.full-dark .product_item .product_details h5 a {
   color: #b0b0bb
@@ -1969,7 +1969,7 @@ body {
   border-color: #3b3b46
 }
 
-.body.full-dark .navbar-nav .icon-menu .notification-dot {
+.body.full-dark .navbar-nav .menu-icon-nav .notification-dot {
   background-color: #f7f7f7
 }
 
@@ -2732,7 +2732,7 @@ html.fullscreen-bg #wrapper {
   }
 }
 
-.navbar-nav .icon-menu {
+.navbar-nav .menu-icon-nav {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -2742,20 +2742,20 @@ html.fullscreen-bg #wrapper {
   position: relative
 }
 
-.navbar-nav .icon-menu i {
+.navbar-nav .menu-icon-nav i {
   font-size: 18px;
   color: #666
 }
 
-.navbar-nav .icon-menu::after {
+.navbar-nav .menu-icon-nav::after {
   display: none
 }
 
-.navbar-nav .icon-menu::before {
+.navbar-nav .menu-icon-nav::before {
   display: none
 }
 
-.navbar-nav .icon-menu .notification-dot {
+.navbar-nav .menu-icon-nav .notification-dot {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;

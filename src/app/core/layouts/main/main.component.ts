@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  show =  true;
+  canvas = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggelSideBar(show: boolean): void {
+    this.show = show;
+  }
+
+  onToggelCanvas(canvas: boolean): void {
+    this.canvas = canvas;
   }
 
 }
