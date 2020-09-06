@@ -13,6 +13,7 @@ import { TopBarComponent } from './sections/top-bar/top-bar.component';
 import { BreadcrumbComponent } from './sections/breadcrumb/breadcrumb.component';
 import { NgxLoadingModule } from 'ngx-loading';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 
@@ -34,7 +35,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     AppRoutingModule,
     NgxLoadingModule.forRoot({}),
-    NgbDropdownModule
+    NgbDropdownModule,
+    SlickCarouselModule
   ],
   exports: [AppRoutingModule]
 })
