@@ -1,0 +1,99 @@
+@import url("../../../assets/dist/css/flaticon/signature/flaticon.css");
+
+@font-face {
+  font-family: 'font-style-1';
+  src: url('./../../../assets/dist/fonts/Brilliantsignatureregular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-2';
+  src: url('./../../../assets/dist/fonts/Brilliantsignature1slant.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-3';
+  src: url('./../../../assets/dist/fonts/PWsignaturefont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-4';
+  src: url('./../../../assets/dist/fonts/PWSignaturetwo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-5';
+  src: url('./../../../assets/dist/fonts/Signatures.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-6';
+  src: url('./../../../assets/dist/fonts/SimpleSignature-TTF.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-7';
+  src: url('./../../../assets/dist/fonts/Wolframia.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-8';
+  src: url('../../../assets/dist/fonts/ShoppingScriptDemo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-9';
+  src: url('./../../../assets/dist/fonts/Rhesmanisa.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-10';
+  src: url('../../../assets/dist/fonts/PrestigeSignatureScript-Demo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'font-style-11';
+  src: url('../../../assets/dist/fonts/ArtySignature.otf') format('truetype');
+}
+
+.signature-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(249,110,91,0.91);
+  border-radius: 13px 13px 13px;
+  font: normal 14px/1 "Times New Roman", Times, serif;
+  color: rgba(0,0,0,1);
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 3.5vw;
+  /* border-bottom: none; */
+  /* border-right: none; */
+  padding-top: 7%;
+  overflow: hidden;
+}
+
+.signature-box-draw {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(249,110,91,0.91);
+  -webkit-border-radius: 13px 00px 00px;
+  border-radius: 13px 13px 13px;
+  font: normal 14px/1 "Times New Roman", Times, serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 3.5vw;
+  /* border-bottom: none; */
+  /* border-right: none; */
+  overflow: hidden;
+}
+
+.modal-footer {
+  margin-top: 10% !important;
+}

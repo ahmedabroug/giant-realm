@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-7">
+    <ngb-pagination  *ngIf="total > limit" [collectionSize]="total" [pageSize]="limit" (pageChange)="onPager($event)" [(page)]="page" [maxSize]="5"></ngb-pagination>
+  </div>
+
+  <div class="col-sm-5" *ngIf="showItemsPerPages === true && total > itemsPerPages[0]">
+    <span class="float-right">Items per page:</span> <br />
+    <ul class="pagination float-right mt-1">
+      <li class="page-item" [ngClass]="{'active': item === limit}" *ngFor="let item of itemsPerPages">
+        <a class="page-link" (click)="onClick(item)">{{item}}</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+
+

@@ -1,0 +1,154 @@
+<ng-template #signature_modal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title"><i class="flaticon-silhouette"></i> Adopt your signature</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body pad">
+    <div *ngIf="confirm === false">
+      <ul class="nav nav-pills ml-auto p-2" style="margin-top: -12px;margin-bottom: 16px;">
+        <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab"
+                                (click)="error='';fromSelectStyle=true;fromDraw=false;fromUpload=false;">Select a
+          Style</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tab_2" data-toggle="tab"
+                                (click)="error='';fromSelectStyle=false;fromDraw=true;fromUpload=false;">Draw</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tab_3" data-toggle="tab"
+                                (click)="error='';fromSelectStyle=false;fromDraw=false;fromUpload=true;">Upload</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab_1" style="margin-left: 8px;">
+          <div class="alert alert-danger" *ngIf="error === 'EMPTY'">
+            The full name is required!
+          </div>
+          <h6>Enter your full name, select a style and click Apdot and sign to create your signature</h6>
+          <div class="row">
+            <div class="form-group col-sm-8">
+              <label for="fullName">Full name</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="fullName"
+                       [(ngModel)]="fullName">
+              </div>
+            </div>
+            <div class="form-group col-sm-4">
+              <label for="style">Style</label>
+              <div class="input-group">
+                <select [(ngModel)]="selectedFont" class="form-control"
+                        data-placeholder="Choose a style" id="style">
+                  <option disabled>Choose a Style</option>
+                  <option *ngFor="let font of fonts" [value]="font.font" [ngStyle]="{'font-family': font.font}">
+                    {{font.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-sm-12">
+              <h5>Preview</h5>
+              <div id="signModalContainer" [ngStyle]="{'font-family': selectedFont}" class="signature-box">
+                <span id="signModalContainerText" style="padding: 0px 10px 0px 10px;">{{fullName}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_2" style="margin-left: 8px;">
+          <div class="alert alert-danger" *ngIf="error === 'PAD_EMPTY'">
+            No draw found, you need to draw one!
+          </div>
+          <h6>Draw to create your signature</h6>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="signature-box-draw">
+                <signature-pad #signaturePadId id="signaturePadId" [options]="signaturePadOptions"
+                               (onBeginEvent)="drawStart()"></signature-pad>
+              </div>
+              <br>
+              <p *ngIf="showCleanNote">If you wanna reset your draw click <a href="javascript:void(0)" style="font-size: 12px" class="badge badge-primary bg-primary-custom" (click)="clean(signaturePadId)">here</a>.</p>
+            </div>
+          </div>
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_3" style="margin-left: 8px;">
+          <div class="alert alert-danger" *ngIf="error === 'IMAGE_NOT_FOUND'">
+            No signature found, you need to upload one!
+          </div>
+          <h6>Upload an image to create your signature</h6>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <div class="btn btn-default btn-file">
+                  <i class="fa fa-upload"></i> Upload
+                  <input type="file" accept="image/*" name="upload_image" (change)="changeListener($event)">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12" *ngIf="signImg">
+              <div >
+                <img style="max-width: 50%;" class="img-fluid margin" [src]="signImg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.tab-pane -->
+      </div>
+      <!-- /.tab-content -->
+    </div>
+    <div *ngIf="confirm === true" style="margin-left: 8px;">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="alert alert-success" *ngIf="error === 'SUCCESS'">
+            Signature Generated with success!
+          </div>
+          <p class="alert alert-danger" *ngIf="expiredToken">
+          <span><strong>An error occurred!
+            <br>
+          </strong> Please try again</span>
+          </p>
+          <h5>Confirm</h5>
+          <h6 *ngIf="fromSelectStyle === true">By clicking <b>Adopt and sign</b>, you agree that the fullname will be
+            the electronic representation of your
+            signature
+          </h6>
+          <h6 *ngIf="fromDraw === true">By clicking <b>Adopt and sign</b>, you agree that the drawing will be the
+            electronic representation of your
+            signature
+          </h6>
+          <h6 *ngIf="fromUpload === true">By clicking <b>Adopt and sign</b>, you agree that the uploaded picture will be
+            the electronic representation of your
+            signature
+          </h6>
+          <!--<div [ngClass]="(fromDraw === true)?'signature-box-draw':'signature-box'"
+               style="padding: 0px 10px 0px 10px;margin-bottom: 30px;">-->
+          <div [ngClass]="(fromDraw === true)?'signature-box-draw':'signature-box'" style="padding: 0px 0px 0px 0px;margin-bottom: 30px;">
+            <img style="max-width: 100%;max-height: 100%;" class="img-fluid margin" [src]="signImg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-primary btn-erp-custom" *ngIf="(confirm === false) && (fromSelectStyle)"
+            (click)="getSignatureScreenShoot()">Confirm
+    </button>
+    <button type="button" class="btn btn-primary btn-erp-custom" *ngIf="(confirm === false) && (fromDraw)"
+            (click)="getSignatureScreenShootDraw(signaturePadId)">Confirm
+    </button>
+    <button type="button" class="btn btn-primary btn-erp-custom" *ngIf="(confirm === false) && (fromUpload)"
+            (click)="getSignatureScreenShootUpload()">Confirm
+    </button>
+    <button type="button" class="btn btn-secondary"
+            (click)="signImg='';fromSelectStyle=true;fromDraw=false;fromUpload=false;confirm=false"
+            *ngIf="confirm === true">Back
+    </button>
+    <button type="button" class="btn btn-primary btn-erp-custom" *ngIf="confirm === true" (click)="adoptAndSign();c('Close click')">Adopt and sign</button>
+  </div>
+</ng-template>
+<form class="form-horizontal">
+  <div class="form-group-sm">
+    <button class="btn btn-primary btn-erp-custom btn-sm" (click)="open(signature_modal)" *ngIf="editing === false">Start to create my signature</button>
+    <a href="javascript:void(0)" style="font-size: small" (click)="open(signature_modal)" *ngIf="editing === true">
+      Update your signature
+    </a>
+  </div>
+</form>
